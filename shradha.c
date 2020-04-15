@@ -1,8 +1,8 @@
 #include<stdio.h>
 void main()
 {
-    int bt[10],p[15],ct[30],tat[10],i,j,n,pos,temp;
-    float average_tat,at[20];
+    int bt[10],p[15],ct[30],i,j,n,pos,temp;
+    float average_tat,at[20],tat[10];
     printf("Enter process required:");
     scanf("%d",&n);
     printf("\nEnter Burst Time of process:\n");
@@ -23,7 +23,7 @@ void main()
      pos=i;
      for(j=i+1;j<n;j++)
      {
-      if(bt[j]<bt[pos])
+      if(bt[j]<bt[pos]&&at[i])
         pos=j;
      }
      temp=bt[i];
@@ -43,11 +43,12 @@ void main()
       tat[i]=ct[i]-at[i];
       average_tat=average_tat+tat[i];
     }
-     printf("Process  Arrival_Time   Burst_Time Turn_Around_Time \n");
+     printf("Process     Burst_Time Turn_Around_Time \n");
      for(i=0;i<n;i++)
      {
-      printf("P%d        %.1f\t	     %d	           %d	        \n",p[i],at[i],bt[i],tat[i]);
+      printf("P%d             %d	           %.1f	        \n",p[i],bt[i],tat[i]);
      }
      average_tat=average_tat/n; 
-     printf("\nAverage Turnaround Time=%f\n",average_tat);
+     printf("\nAverage Turnaround Time=%.2f\n",average_tat);
 }
+
