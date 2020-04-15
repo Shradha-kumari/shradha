@@ -1,8 +1,8 @@
 #include<stdio.h>
 void main()
 {
- int burst_t[5],completion_t[5],turnaround_time[5],i,n;
- float atat=0,arrival_t[10];
+ int burst_t[5],completion_t[5],i,n;
+ float atat=0,arrival_t[10],turnaround_time[50];
  printf("\nEnter number of processes:");
  scanf("%d",&n);
  printf("\nEnter arrival time of processes:");
@@ -31,7 +31,7 @@ void main()
  printf("Process Arrival_time Burst_Time Turn_Around_Time \n");
  for(i=0;i<n;i++)
 {
- printf("P%d      %.2f	    %d	           %d\n",i+1,arrival_t[i],burst_t[i],turnaround_time[i]);
+ printf("P%d      %.2f	    %d	           %.1f\n",i+1,arrival_t[i],burst_t[i],turnaround_time[i]);
 }
 
 atat=atat/n;
